@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Rotating Quotes Widget</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+    }
+    .quote-container {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .quote {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .author {
+      font-size: 1em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quote-container">
+    <div class="quote" id="quote">"Your quote will appear here..."</div>
+    <div class="author" id="author">- Author</div>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+      { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+      { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+      { text: "The future depends on what you do today.", author: "Mahatma Gandhi" },
+      { text: "Act as if what you do makes a difference. It does.", author: "William James" }
+    ];
+
+    function getDailyQuote() {
+      const today = new Date();
+      const dayOfYear = Math.floor(
+        (today - new Date(today.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
+      );
+      const quoteIndex = dayOfYear % quotes.length;
+      return quotes[quoteIndex];
+    }
+
+    const quote = getDailyQuote();
+    document.getElementById('quote').textContent = `"${quote.text}"`;
+    document.getElementById('author').textContent = `- ${quote.author}`;
+  </script>
+
+</body>
+</html>
