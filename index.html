@@ -46,12 +46,12 @@
       { text: "Life isn't about finding yourself. Life is about creating yourself.", author: "George Bernard Shaw" },
       { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
       { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
-      { text: "“In three words I can sum up everything I've learned about life: it goes on.", author: "Robert Frost" },
-      { text: "Act as if what you do makes a difference. It does.", author: "William James" }
-      { text: "Well now it’s summer I thought, so let me do something new.", author: "Sujata Bhatt" }
-      { text: "—what does it all come down to? love? Love…", author: "e.e. cummings" }
-      { text: "You will never be able to escape from your heart. So it’s better to listen to what it has to say.", author: "Paulo Coelho" }
-      { text: "I actually think that a lot of people are very beautiful, and maybe even more beautiful when they are not aware of it themselves.", author: "Alice Oseman" }
+      { text: "In three words I can sum up everything I've learned about life: it goes on.", author: "Robert Frost" },
+      { text: "Act as if what you do makes a difference. It does.", author: "William James" },
+      { text: "Well now it’s summer I thought, so let me do something new.", author: "Sujata Bhatt" },
+      { text: "—what does it all come down to? love? Love…", author: "e.e. cummings" },
+      { text: "You will never be able to escape from your heart. So it’s better to listen to what it has to say.", author: "Paulo Coelho" },
+      { text: "I actually think that a lot of people are very beautiful, and maybe even more beautiful when they are not aware of it themselves.", author: "Alice Oseman" },
       { text: "Words were different when they lived inside of you.", author: "Benjamin Alire Sáenz" }
     ];
 
@@ -65,7 +65,7 @@
     }
 
     const quote = getDailyQuote();
-    document.getElementById('quote').textContent = `"${quote.text}"`;
+    document.getElementById('quote').textContent = quote.text;
     document.getElementById('author').textContent = `- ${quote.author}`;
   </script>
 
